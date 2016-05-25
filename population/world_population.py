@@ -7,7 +7,7 @@ from pygal.style import LightColorizedStyle as LCS, RotateStyle as RS
 from country_codes import get_country_code
 
 
-# Load the data into a list.
+# Load the population data into a list.
 filename = 'population_data.json'
 with open(filename) as f:
     pop_data = json.load(f)
@@ -34,6 +34,7 @@ for cc, pop in cc_populations.items():
     else:
         cc_pops_3[cc] = pop
 
+# Plot and output to file
 wm_style = RS('#336699', base_style=LCS)
 wm = World(style=wm_style)
 wm.force_uri_protocol = 'http'
